@@ -1,3 +1,7 @@
-.jumbotron {
-    width: 100px;
+.jumbotron h1 {
+    color: #120f72;
+}
+
+.jumbotron h3 {
+    color: #ca0000;
 }
