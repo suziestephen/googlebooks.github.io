@@ -5,9 +5,8 @@ function Footer() {
     return (
 
         <div className="footer"> 
-            <div className="container text-light">
-                <h1>Google Books Search</h1>
-                <h3>Search for and Save Books of Interest</h3>
+            <div className="container text-dark">
+             <p>Suzie Stephen React Google Book Search 2021</p>
             </div>
         </div>
     );
