@@ -3,6 +3,7 @@ import API from "../../utils/API";
 
 class Results extends Component {
 
+    //from saved.js
     state = {
         savedBooks: [],
     }
@@ -13,6 +14,7 @@ class Results extends Component {
             .catch(err => console.error(err));
     }
 
+    //save and delete functions using savedBooks and saveBook routes from utils
     handleSave = book => {
 
         if (this.state.savedBooks.map(book => book._id).includes(book._id)) {
@@ -25,6 +27,10 @@ class Results extends Component {
                 .catch(err => console.error(err));
         }
     }
+
+    //formatting inside component not own css file 
+    //use map function to pull through results array e.g. {result.title}
+    //save/unsave button using savedBooks state and map (callback function on each array element to display results array that matches). Using book.id and result.id in true/false condition (includes) to save/unsave
 
     render() {
         return (
@@ -45,6 +51,7 @@ class Results extends Component {
                                                 <p className="card-text">{result.description}</p>
                                                 <div>
                                                     <a href={result.link} className="btn badge-pill btn-outline-dark mt-3" target="_blank" >View</a>
+                                                    
                                                     <button onClick={() => this.handleSave(result)} className="btn badge-pill btn-outline-warning mt-3 ml-3" >
                                                         {this.state.savedBooks.map(book => book._id).includes(result._id) ? "Unsave" : "Save"}
                                                     </button>
