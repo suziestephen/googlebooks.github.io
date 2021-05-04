@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "googlebooks.github.io",
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../../react-port/react-portfolio.github.io/react-portfolio"
+		},
+		{
+			"path": "../../../../Google-Books-Search"
+		}
+	],
+	"settings": {}
+}
