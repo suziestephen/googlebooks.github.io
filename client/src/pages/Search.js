@@ -10,9 +10,11 @@ class Search extends React.Component {
   };
 
   componentDidMount() {
+      //primary function for search
       this.searchBook();
   }
 
+  //creates book data
   makeBook = bookData => {
       return {
           _id: bookData.id,
@@ -24,12 +26,14 @@ class Search extends React.Component {
       }
   }
 
+  //search function to change state of books to the book data from makeBook
   searchBook = query => {
       API.getBook(query)
           .then(res => this.setState({ books: res.data.items.map(bookData => this.makeBook(bookData)) }))
           .catch(err => console.error(err));
   };
 
+  //actions for search text
   handleInputChange = event => {
       const name = event.target.name;
       const value = event.target.value;
@@ -38,11 +42,13 @@ class Search extends React.Component {
       });
   };
 
+  //actions for submit button
   handleFormSubmit = event => {
       event.preventDefault();
       this.searchBook(this.state.search);
   };
 
+  //render using search function and then input change and form submit
   render() {
       return (
           <div>
@@ -59,5 +65,7 @@ class Search extends React.Component {
       )
   }
 }
+
+//results component displays books 
 
 export default Search;
