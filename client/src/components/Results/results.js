@@ -14,7 +14,7 @@ class Results extends Component {
             .catch(err => console.error(err));
     }
 
-    //save and delete functions using savedBooks and saveBook routes from utils
+    //save and delete(unsave) functions using savedBooks and saveBook routes from utils
     handleSave = book => {
 
         if (this.state.savedBooks.map(book => book._id).includes(book._id)) {
