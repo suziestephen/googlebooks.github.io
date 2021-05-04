@@ -20,6 +20,8 @@ class Results extends Component {
         if (this.state.savedBooks.map(book => book._id).includes(book._id)) {
             API.deleteBook(book._id)
                 .then(deletedBook => this.setState({ savedBooks: this.state.savedBooks.filter(book => book._id !== deletedBook._id) }))
+                //changing state of (variable:function) savedbooks: will return items in array where book id does not = delete book id (unsave item from array)
+                
                 .catch(err => console.error(err));
         } else {
             API.saveBook(book)
