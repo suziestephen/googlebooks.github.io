@@ -3,7 +3,7 @@ import API from "../utils/API";
 import Results from "../components/Results/results";
 
 
-//saved books array
+//saved books state
 class Saved extends Component {
     state = {
         savedBooks: [],
